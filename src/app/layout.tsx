@@ -3,6 +3,7 @@ import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "sonner";
 import { Navbar } from "~/components/layout/Nabnar";
+import Providers from "./providers";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta-sans",
@@ -22,9 +23,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${plusJakartaSans.variable} font-sans  antialiased`}>
-        <Navbar />
-        {children}
-        <Toaster />
+        <Providers>
+          <Navbar />
+          {children}
+          <Toaster />
+        </Providers>
       </body>
     </html>
   );
